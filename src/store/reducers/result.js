@@ -7,7 +7,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.STORE_RESULT:
-      return Object.assign({}, state, { results: state.results.concat({ id: new Date(), value: action.value }) });
+      return Object.assign({}, state, { results: state.results.concat({ id: new Date(), value: action.value * 2 }) });
 
     case actionTypes.DELETE_RESULT:
       const results = state.results.filter(result => result.id !== action.id)
